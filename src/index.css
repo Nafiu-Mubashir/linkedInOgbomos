@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  /* outline: 1px solid silver; */
+  outline: 1px solid silver;
 }
 body {
   margin: 0;
