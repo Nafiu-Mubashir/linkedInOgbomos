@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/navLogo.png';
-import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowRight } from "react-icons/ai";
 import { Button } from './Button';
 
 const Navbar = () => {
@@ -9,6 +9,25 @@ const Navbar = () => {
   const handleToggle = () => {
     setToggle(!toggle)
   }
+
+  const useOutsideAlerter = (ref) => {
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setToggle(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [ref]);
+};
+
+
+const wrapperRef = useRef(null);
+useOutsideAlerter(wrapperRef);
 
   return (
     <div className='fixed z-50 w-full'>
@@ -23,7 +42,7 @@ const Navbar = () => {
             <span className="sr-only">Open main menu</span>
             <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
           </button>
-          <div className={toggle === false ? 'hidden w-full md:block md:w-auto' : 'w-full md:block md:w-auto'} id="navbar-default">
+          <div className={toggle === false ? 'hidden w-full md:block md:w-auto' : 'w-full md:block md:w-auto'} id="navbar-default" ref={wrapperRef}>
             <ul className="flex lg:flex-rows flex-col items-center text-left p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
               <NavLink>
                 <p className="block py-2 pl-3 pr-4 text-[#0A66C2] rounded md:bg-transparent md:text-[#0A66C2] md:p-0" aria-current="page">Home</p>

@@ -15,7 +15,7 @@ const Home = () => {
                 <div className="lg:w-[95vw] w-[85vw] mx-auto gap-10 md:gap-0 mt-24">
                     <section>
 
-                        <div className='flex lg:flex-row flex-col justify-center items-center mt-2 w-full mx-auto mb-20 p-3'>
+                        <div className='flex lg:flex-row flex-col justify-center items-center mt-2 w-full mx-auto mb-10 p-3'>
                             <div className="w-full p-3">
                                 <Header text={'Building Connections That Matter'} className={'lg:w-[80%]'} />
                                 <Button text={'Register Here'} />
@@ -32,7 +32,7 @@ const Home = () => {
                             <div>
                                 <Header text={'The Countdown has started!!!'} className={'text-center'} />
 
-                                <div className='flex lg:flex-row flex-col lg:justify-evenly lg:items-center mt-2 w-full mx-auto mb-20 p-3'>
+                                <div className='flex lg:flex-row flex-col lg:justify-evenly lg:items-center mt-2 w-full mx-auto mb-5 p-3'>
                                     <div>
                                         <img src={logo} className='w-[465.09px] h-[49.18px]' alt="" />
                                         <p className='lg:text-[40px] text-[19.99px] text-[#0A66C2] mb-5'>is happening in exactly:</p>
