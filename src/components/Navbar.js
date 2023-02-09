@@ -32,7 +32,7 @@ useOutsideAlerter(wrapperRef);
   return (
     <div className='fixed z-50 w-full'>
 
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow lg:h-[90px] md:h-[59px] sticky">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow lg:h-[80px] md:h-[59px] sticky">
         <div className="container flex flex-wrap items-center justify-between mx-auto lg:w-[80%]">
           <a href="https://flowbite.com/" className="flex items-center">
             <img src={logo} className="mr-3 sm:h-9 lg:w-[226.94px] lg:h-[23.55px] w-[70%]" alt="Flowbite Logo" />
