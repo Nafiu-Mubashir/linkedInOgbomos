@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  outline: 1px solid silver;
+  /* outline: 1px solid silver; */
 }
 body {
   margin: 0;
@@ -21,18 +21,23 @@ code {
 
 .timerSection{
   background-image: url('./assets/1st desktop bubble bg.png');
-  background-size: cover;
-  background-position: top;
-  padding: 2rem;
-  background-repeat: no-repeat;
+}
+
+#partnership{
+  background-image: url('./assets/1st desktop bubble bg.png');
+}
+
+.footer{
+  background-image: url('./assets/1st desktop bubble bg.png');
 }
 
 @media (max-width: 567px) {
   .timerSection{
     background-image: url('./assets/1st mobile bubble bg.png');
-    background-size: cover;
-    background-position: center;
-    padding: 2rem;
-    background-repeat: no-repeat;
+
   } 
+
+  #partnership{
+    background-image: url('./assets/2nd mobile bubble bg.png');
+  }
 }
